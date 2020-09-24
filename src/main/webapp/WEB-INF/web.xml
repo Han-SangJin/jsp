@@ -22,6 +22,20 @@
   </servlet-mapping>  
   
   
- 
+  
+  
+  
+  
+   <servlet>
+  	<servlet-name>TimesTablesServlet</servlet-name>
+  	<servlet-class>kr.or.ddit.basic.TimesTablesServlet</servlet-class>
+  </servlet>
+
+	<!-- /TimesTablesServlet 으로 요청이 왔을경우 TimesTablesServlet이라는 이름의 서블릿을 실행 -->
+  <servlet-mapping>
+  	<servlet-name>TimesTablesServlet</servlet-name>
+  	<url-pattern>/TimesTablesServlet</url-pattern>
+  </servlet-mapping>  
+  
   
 </web-app>
