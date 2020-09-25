@@ -18,7 +18,7 @@ public class TimesTablesServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
-		 
+		
 		PrintWriter writer = response.getWriter();
 		writer.println("<html>");
 		writer.println("<head></head>");
@@ -32,7 +32,7 @@ public class TimesTablesServlet extends HttpServlet {
 	    					}
 	    writer.println(			"<br>");
 	    writer.println(			"</tr>");
-	    					 
+	    				 
 					  } 
 		writer.println("</table>");
 		writer.println("</body>");

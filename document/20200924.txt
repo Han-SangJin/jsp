@@ -2,4 +2,4 @@
 2. 버튼 : form - get
 		form - post
 		
-		3. link - get 
+		3. link - get  
