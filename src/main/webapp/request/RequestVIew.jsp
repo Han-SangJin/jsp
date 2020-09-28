@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-
+ 
 	 <%-- 
 		 파라미터 : client 서버로 요청을 보낼때 추가적으로 보낸 값
 				ex : 로그인 요청시 : 사용자 id, 비밀번호
@@ -40,7 +40,7 @@
 		 		request.getParamerter() 메소드를 호출하기 전에 설정을 해줘야 한다. 
 	  --%>
 	 
-	 
+	  
 	 <%-- 
 	  	 action : 요청을 보낼 경로
 	 	 method : 요청 방식 (form에서는 GET, POST두가지만 가능하며 DEFAULT는 GET)
@@ -54,11 +54,12 @@
 	<input type="radio" value="post" name="do" id="post" class="ra">POST<br><br>
 	
 	
-<%-- 	<%
+	<%-- 	
+		<%
 			String get = request.getParameter("get");
 			String post = request.getParameter("post");
 		%>
-		 --%>
+	--%>
 
 	
 	
@@ -93,6 +94,6 @@
 	})
 </script>	
 	
-	<div id="result">dd</div>
+	<div id="result"></div>
 </body>
 </html> 

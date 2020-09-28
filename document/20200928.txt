@@ -1,0 +1,6 @@
+jsp 스크립트 종류
+지시자(directive): <%@ %>
+스크립틀릿(scriptlet):<% %>
+표현식(expression) : <%! %>
+선언부(declation) : <%! %>
+주석(comment) : <%-- --%>
