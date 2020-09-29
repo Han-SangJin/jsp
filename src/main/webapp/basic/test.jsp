@@ -24,7 +24,7 @@
 	서버사이드 스크립트가 먼저 실행되므로 논리적으로 말이 된다.*/
 	var msg = '<%= str3 %>';		
 
-	
+	/
 	
 
 	jsp 프로젝트(contextPath ROOT(/))의 webapp/jsp/test.jsp를 접근하기 위해서는
