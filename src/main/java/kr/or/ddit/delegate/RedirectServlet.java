@@ -29,7 +29,7 @@ public class RedirectServlet extends HttpServlet {
 		
 		
 		// 문자열 결함만 조심하자 "redirectServlet" "doGet()"
-		logger.debug("redirectServlet.doGet()");
+		logger.debug("redirectServlet.doGet{} {}", "doGet()", "test");
 		
 		// 응답을 다른 jsp 에게 위임하는 첫번째 방법 : redirect
 		// response 객체의 sendRedirect 메소드를 통해

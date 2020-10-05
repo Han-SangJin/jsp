@@ -33,5 +33,9 @@
   	<url-pattern>/TimesTablesServlet</url-pattern>
   </servlet-mapping>   -->
   
+  <context-param>
+  	<param-name>dbUserId</param-name>
+  	<param-value>PC-02</param-value>
+  </context-param>
   
 </web-app>
