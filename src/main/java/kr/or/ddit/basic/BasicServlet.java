@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 //		localhost/BasicServlet.java
 //		url - 서블릿 매핑하는 작업
 //		url을 직접 이름을 생성해줘야 한다.(web.xml)
+/**
+ * Servlet implementation class TimesTablesServlet
+ */
+@WebServlet("/basicServlet")
 public class BasicServlet extends HttpServlet {
 	
 	@Override

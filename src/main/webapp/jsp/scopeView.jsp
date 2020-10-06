@@ -12,9 +12,9 @@
 		<input type="submit" value="전송">
 	</form>
 	
-  	
 	request : <%= request.getAttribute("reqeustAttr") %><br>
 	session : <%= session.getAttribute("sessionAttr") %><br>
 	application : <%= application.getAttribute("applicationAttr") %><br>
+	
 </body>
 </html> 
