@@ -25,8 +25,8 @@
 </head>
 
 <body>
- 
-	
+
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -37,9 +37,8 @@
 					class="icon-bar"></span>
 			</button>
 			<% MemberVo memberVo = (MemberVo)session.getAttribute("S_MEMBER"); %>
-			<a class="navbar-brand" href="#">JSP/SPRING
-			<% if(memberVo != null) out.print( [ memberVo.getUserId()) %>]</a>
-		</div> 
+			<a class="navbar-brand" href="#">JSP/SPRING [<%= memberVo.getUserId() %>]</a>
+		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Dashboard</a></li>
