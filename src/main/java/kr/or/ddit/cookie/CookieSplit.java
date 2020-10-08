@@ -23,7 +23,7 @@ public class CookieSplit {
 		
 	}
 	
-	
+	 
 	// cookieString 필드를 분석하여 메소드 인자로 넘어온 cookieName 에 해당하는 쿠키가 있을경우
 	// 해단 쿠키의 값을 반환하는 메소드
 	public String getCookieValue(String cookieName) {

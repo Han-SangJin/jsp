@@ -1,4 +1,4 @@
-package kr.or.ddit.ranger.service;
+package cookie;
 
 import static org.junit.Assert.*;
 

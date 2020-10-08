@@ -20,31 +20,128 @@
     <!-- Custom styles for this template -->
     <link href="<%= request.getContextPath() %>/css/signin.css" rel="stylesheet">
 	
-  </head>
-	 
-  <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/js.cookie-2.2.1.min.js"></script>
+	
+	
+	<script>
+		
+		$(function(){
+			
+			// remember me cookie 확인
+			if(Cookies.get("REMEMBERME")=="Y"){
+				$("input[type=checkbox]").prop("checked",true);
+				//$("input[type=checkbox]").attr("checked","checked");
+				$("#inputEmail").val(Cookies.get("USERNM"))
+				//console.log("체크");
+			} 
 
+
+			// sign in b버튼이 클릭 되엇을때 이벤크 핸들러
+			$("button").on('click',function(){
+				console.log("button_click");
+			
+				if($("input[type=checkbox]").prop("checked") == true){
+					Cookies.set("REMEMBERME","Y");
+					Cookies.set("USERNM", $("#inputEmail").val());
+				}else{
+					Cookies.remove("REMEMBERME");
+					Cookies.remove("USERNM");
+				}
+
+				// submit
+				$("form").submit();
+				
+			})
+			
+
+			
+		})
+		
+			
+		/* function getCookieValues(cookieName){
+			var cookieString = document.cookie.split("; ")
+			var usernm = cookies[0].split9("=")
+			
+			console.log(usernm[0])
+			console.log(usernm[1])
+		} */
+ 
+		
+		function getCookieValues(cookieName){
+			
+			var cookieString = document.cookie.split("; ")
+			for(var i=0; i< cookies.length; i++){
+				var cookie = cookies[i];
+				var cookieArr = cookie.splie("=");
+
+				if(cookieName == cookieArr[0]){
+					return cookieArr[1];
+				}
+			}
+			// 원하는 쿠키가 없는 경우
+			return "";
+		}	
+
+
+		// 쿠키 날짜 설정
+		function setCookie(cookieName, cookieValue, expires){
+			//"USERNM=brown; path=/; expries=Wed, 07 Oct 2020 00:38:35 GMT;"
+			var today = new Date();
+			// 현재 날짜에서 미래로  + expires 만큼 한 날짜 구하기
+			today.setDate( today.getDate() + expires );
+			
+			document.cookie = cookieName + "=" + cookieValue + "; path=/; expires=" + today.toGMTString();
+			console.log(document.cookie);
+		}
+		
+		
+		// 해당 쿠키의 expires 속성을 과거 날짜로 변경
+		function deleteCookie(cookieName){
+			setCookie(cookieName, "", -1);	
+		}
+
+		// window.onload = function(){
+		/* 	$('#remember').on('checked', function(){
+		
+				if(Cookies.get("REMEMBERME")=='Y'){
+					$('#remember').attr('checked','checked');
+					console.log("체크");
+				}else{ 
+					  
+				}
+			}) */
+			
+			
+		//} 
+	</script>
+  </head>
+   
+  
+	
+  <body>
+	
     <div class="container">
 
-      <form class="form-signin">
+      <form id="frm" class="form-signin" action="<%=request.getContextPath() %>/login" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" id="inputEmail" name="userId" class="form-control" placeholder="Email address" required autofocus value="brown">
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required value="passBrown">
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="" id="remember"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
       </form>
 
     </div> <!-- /container -->
 
   </body>
-  
-<script>
+  		
+<!-- <script>
 		getCookieValue("USERID");
 		getCookieValue("REMEMBERME");
 		getCookieValue("NOTEXISTS_COOKIE");
@@ -56,7 +153,7 @@
 		console.log(usernm[1])
 		
 	}
-</script>  
+</script>   -->
 </html>
 
     
