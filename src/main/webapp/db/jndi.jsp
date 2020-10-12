@@ -20,7 +20,6 @@
 			Connection conn = ds.getConnection();
 			conn.close();
 		}
-		} 
 		      
 		long endTime = System.currentTimeMillis();
 		

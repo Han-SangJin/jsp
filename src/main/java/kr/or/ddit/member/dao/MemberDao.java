@@ -15,7 +15,7 @@ public class MemberDao implements MemberDaoI {
 		// controller 기능에 집중 => 하드코딩을 통해 dao, service 는 간략하게 넘어간다
 		//		Mock (가짜)
 		
-		MemberVo memberVo = new MemberVo();
+		//MemberVo memberVo = new MemberVo();
 //		MemberVo memberVo = new MemberVo();
 //		memberVo.setUserId("brown");
 //		memberVo.setPassword("passBrown");
