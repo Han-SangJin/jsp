@@ -1,4 +1,5 @@
 diff a/.classpath b/.classpath	(rejected hunks)
+<<<<<<< HEAD
 @@ -1,61 +1,67 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <classpath>
@@ -23,6 +24,9 @@ diff a/.classpath b/.classpath	(rejected hunks)
  	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
  		<attributes>
  			<attribute name="test" value="true"/>
+=======
+@@ -24,12 +24,6 @@
+>>>>>>> 54cc370bc396a69cf6e6fe86e0d983de36490755
  			<attribute name="maven.pomderived" value="true"/>
  		</attributes>
  	</classpathentry>
@@ -35,6 +39,7 @@ diff a/.classpath b/.classpath	(rejected hunks)
  	<classpathentry kind="src" path="target/generated-sources/annotations">
  		<attributes>
  			<attribute name="ignore_optional_problems" value="true"/>
+<<<<<<< HEAD
  			<attribute name="optional" value="true"/>
  			<attribute name="maven.pomderived" value="true"/>
  			<attribute name="m2e-apt" value="true"/>
@@ -78,3 +83,5 @@ diff a/.classpath b/.classpath	(rejected hunks)
  	</classpathentry>
  	<classpathentry kind="output" path="target/classes"/>
  </classpath>
+=======
+>>>>>>> 54cc370bc396a69cf6e6fe86e0d983de36490755

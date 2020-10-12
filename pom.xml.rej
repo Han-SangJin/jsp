@@ -1,4 +1,5 @@
 diff a/pom.xml b/pom.xml	(rejected hunks)
+<<<<<<< HEAD
 @@ -37,53 +37,61 @@
    	<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
  	<dependency>
@@ -47,6 +48,9 @@ diff a/pom.xml b/pom.xml	(rejected hunks)
  	<dependency>
  	    <groupId>org.apache.commons</groupId>
  	    <artifactId>commons-dbcp2</artifactId>
+=======
+@@ -84,6 +84,14 @@
+>>>>>>> 54cc370bc396a69cf6e6fe86e0d983de36490755
  	    <version>2.8.0</version>
  	</dependency>
  	

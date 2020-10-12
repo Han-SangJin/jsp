@@ -1,4 +1,5 @@
 diff a/src/main/webapp/db/jndi.jsp b/src/main/webapp/db/jndi.jsp	(rejected hunks)
+<<<<<<< HEAD
 @@ -1,29 +1,29 @@
  <%@page import="java.sql.Connection"%>
  <%@page import="javax.sql.DataSource"%>
@@ -35,3 +36,13 @@ diff a/src/main/webapp/db/jndi.jsp b/src/main/webapp/db/jndi.jsp	(rejected hunks
 \ No newline at end of file
 +</html>   
 \ No newline at end of file
+=======
+@@ -19,7 +19,6 @@
+ 		for(int i=0; i<20; i++){
+ 			Connection conn = ds.getConnection();
+ 			conn.close();
+-		   
+ 		} 
+ 		      
+ 		long endTime = System.currentTimeMillis();
+>>>>>>> 54cc370bc396a69cf6e6fe86e0d983de36490755
