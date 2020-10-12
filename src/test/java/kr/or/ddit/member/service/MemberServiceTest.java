@@ -16,8 +16,8 @@ public class MemberServiceTest {
 		String userId = "brown";
 
 		MemberVo answerMemberVo = new MemberVo();
-		answerMemberVo.setUserId("brown");
-		answerMemberVo.setPassword("passBrown");
+		answerMemberVo.setUserid("brown");
+		answerMemberVo.setPass("brownPass");
 		 
 		
 		/***When***/
@@ -25,10 +25,9 @@ public class MemberServiceTest {
 
 		
 		/***Then***/
-//		assertEquals("brown", memberVo.getUserId());
-//		assertEquals("passBrown", memberVo.getPassword());
+//		assertEquals("brown", memberVo.getUserid());
+//		assertEquals("brownPass", memberVo.getPass());
 		
 		assertEquals(answerMemberVo, memberVo);
 	}
-
 }

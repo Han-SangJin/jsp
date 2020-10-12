@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
+	<%	
 		InitialContext context = new InitialContext();	
 		DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/oracleDB");
 		

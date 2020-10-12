@@ -22,7 +22,7 @@
 		long endTime = System.currentTimeMillis();
 		
 		out.print("<h3>endTime - startTime  : " + (endTime - startTime) + " ms </h3>");
-	%>
-
+	%> 
+	
 </body>
 </html>
