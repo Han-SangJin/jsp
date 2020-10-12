@@ -26,7 +26,7 @@
 		String url = "jdbc:oracle:thin:@localhost:1521/xe";
 		String user = "HSJ";
 		String password = "java";
-	
+	 
 		conn = DriverManager.getConnection(url, user, password);
 			
 		long startTime = System.currentTimeMillis();

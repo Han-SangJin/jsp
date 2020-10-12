@@ -19,11 +19,11 @@
 		for(int i=0; i<20; i++){
 			Connection conn = ds.getConnection();
 			conn.close();
-		}
-		   
+		} 
+		      
 		long endTime = System.currentTimeMillis();
 		
 		out.print("<h3>endTime - startTime  : " + (endTime - startTime) + " ms </h3>");
-	%>
+	%>  
 </body>
-</html>
+</html>   
