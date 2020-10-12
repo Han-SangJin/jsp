@@ -37,8 +37,8 @@
 					class="icon-bar"></span>
 			</button>
 			<% MemberVo memberVo = (MemberVo)session.getAttribute("S_MEMBER"); %>
-			<a class="navbar-brand" href="#">JSP/SPRING [<%= memberVo.getUserId() %>]</a>
-		</div>
+			<a class="navbar-brand" href="#"><%-- JSP/SPRING [<%= memberVo.getUserid() %>] --%></a>
+		</div> 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Dashboard</a></li>
@@ -58,9 +58,10 @@
 	<ul class="nav nav-sidebar">
 		<li class="active"><a href="#">Main <span class="sr-only">(current)</span></a></li>
 		<li class="active"><a href="#">사용자</a></li>
-	</ul>
+		<li class="active"><a href="<%=request.getContextPath() %>/selectAllJobs">jobs</a></li>
+	</ul>    
 </div><div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				
+				    
 
 <div class="blog-header">
 	<h1 class="blog-title">Main</h1>
@@ -68,7 +69,7 @@
 </div>
 
 <div class="row">
-
+ 
 	<div class="col-sm-8 blog-main">
 
 		<div class="blog-post">
