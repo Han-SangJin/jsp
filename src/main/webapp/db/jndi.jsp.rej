@@ -1,0 +1,9 @@
+diff a/src/main/webapp/db/jndi.jsp b/src/main/webapp/db/jndi.jsp	(rejected hunks)
+@@ -19,7 +19,6 @@
+ 		for(int i=0; i<20; i++){
+ 			Connection conn = ds.getConnection();
+ 			conn.close();
+-		   
+ 		} 
+ 		      
+ 		long endTime = System.currentTimeMillis();
