@@ -22,3 +22,4 @@ public class JobDaoTest {
 		assertEquals(19, jobsVoList.size());
 	}
 }
+ 
