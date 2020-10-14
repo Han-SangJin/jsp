@@ -38,7 +38,7 @@ public class SelectAllJobs extends HttpServlet {
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/joblist.jsp");
 		dispatcher.forward(req, resp);
-		
+		 
 	} 
 	
 	@Override

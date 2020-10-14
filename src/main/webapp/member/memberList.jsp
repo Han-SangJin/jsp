@@ -1,13 +1,14 @@
-<%@page import="kr.or.ddit.jobs.model.JobsVo"%>
+<%@page import="kr.or.ddit.member.model.MemberVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
 <%
-	List<JobsVo> jobsList = (List<JobsVo>) request.getAttribute("jobsList");
+	List<MemberVo> memberList = (List<MemberVo>) request.getAttribute("memberList");
 	String msg = (String) request.getAttribute("msg");
-
-%> 
-
+%>  
+ 
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -27,37 +28,39 @@
 <body>
 <!-- 상단 네비게이션바 -->
 <%@ include file="/layout/header.jsp" %>
-	
-	
+
+
 <div class="container-fluid">
 		<div class="row">
-			
-			
-<!-- 왼쪽 사이드바 -->			
+
+
+<!-- 왼쪽 사이드 바 -->			
 <div class="col-sm-3 col-md-2 sidebar">
   <%@ include file="/layout/left.jsp" %>
-</div>
-
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+</div><div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				
 
 <div class="row">
 	<div class="col-sm-8 blog-main">
-		<h2 class="sub-header">jobs</h2>
+		<h2 class="sub-header">사용자</h2>
 		<div class="table-responsive">
 			<table class="table table-striped">
 				 <tr> 
-				 	<td><p>ID</p></td>
-				 	<td><p>title</p></td>
+				 	<td><p>사용자 아이디</p></td>
+				 	<td><p>사용자 이름</p></td>
+				 	<td><p>사용자 별명</p></td>
+				 	<td><p>등록 일시</p></td>
 				 </tr>
 				<% 	 
-					int jobSize = jobsList.size();
-					if(jobSize > 0){
-						for(int i=0; i<jobSize; i++){
+					int memSize = memberList.size();
+					if(memSize > 0){
+						for(int i=0; i<memSize; i++){
 				%>			
 					<tr>
-						<td><%= jobsList.get(i).getJob_id() %></td>
-						<td><%= jobsList.get(i).getJob_title() %></td>
+						<td><%= memberList.get(i).getUserid() %></td>
+						<td><%= memberList.get(i).getUsernm() %></td>
+						<td><%= memberList.get(i).getAlias() %></td>
+						<td><%= memberList.get(i).getReg_dt() %></td>
 					</tr>	 
 				<% 			
 						}
@@ -68,7 +71,7 @@
 					</tr>
 				<%	
 					}
-				%> 	
+				%>
 				
 				
 			</table>
@@ -102,3 +105,6 @@
 	</div>
 </body>
 </html>
+    
+
+ 

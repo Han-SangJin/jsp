@@ -8,7 +8,7 @@
 </head>
 <body>
 	sumImput.jsp<br>
-	<form method="POST" action="<%= request.getContextPath() %>/sumCalculation" >
+	<form method="POST" action="${pageContext.request.contextPath }/sumCalculation" >
 		start : <input type="text" name="start" value="1"/><br>
 		end : <input type="text" name="end" value="5"/><br>
 		<input type="submit" value="전송"/>

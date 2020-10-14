@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link redl="stylesheet" href="<%= request.getContextPath() %>/css/public.csss">
+<link redl="stylesheet" href="${pageContext.request.contextPath }/css/public.csss">
 </head>
 <body>
 	<%-- 
@@ -48,7 +48,7 @@
 		
 		<tr>
 			<td>request.getContextPath() : </td>
-			<td><%= request.getContextPath() %></td>
+			<td>${pageContext.request.contextPath }</td>
 		</tr>
 	</table>
 </body>

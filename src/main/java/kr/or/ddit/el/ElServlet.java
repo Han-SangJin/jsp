@@ -27,11 +27,11 @@ public class ElServlet extends HttpServlet {
 	public void init() throws ServletException {
 		memberService = new MemberService();
 	}
-	
+	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/el/el.jsp").forward(request, response);
 		
-	}
+	} 
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

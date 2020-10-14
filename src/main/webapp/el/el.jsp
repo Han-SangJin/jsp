@@ -20,7 +20,7 @@
 			sessionParam = "checked";
 		else if(scope.equals("applicationValue"))
 			applicationParam = "checked";
-	%>
+	%> 
 	  
 				request(request) 				: <input type="radio" name="scope" value="requestValue" <%=requestParam %>/> <br>
 			session(request,session) 			: <input type="radio" name="scope" value="sessionValue" <%=sessionParam %>/> <br>

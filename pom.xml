@@ -24,7 +24,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+	</build> 
 
 	<repositories>
 		<repository>
@@ -69,7 +69,7 @@
 			<scope>test</scope>
 		</dependency>
 
-
+	
 		<!-- ojdbc -->
 		<dependency>
 			<groupId>com.oracle</groupId>
