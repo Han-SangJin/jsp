@@ -52,7 +52,7 @@
 			<p class="blog-post-meta">
 				2017.10.30, room 201
 			</p>
-
+ 	
 			<p>jsp를 통한 웹 프로그래밍 학습</p>
 			<hr>
 			
