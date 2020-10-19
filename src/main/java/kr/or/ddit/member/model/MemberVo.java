@@ -1,6 +1,6 @@
 package kr.or.ddit.member.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MemberVo {
 	

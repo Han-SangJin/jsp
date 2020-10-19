@@ -10,8 +10,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+	
     <title>Signin Template for Bootstrap</title>
 	
     <!-- Bootstrap core CSS -->

@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
 <%
 	List<MemberVo> memberList = (List<MemberVo>) request.getAttribute("memberList");
@@ -60,7 +60,8 @@
 						<td><%= memberList.get(i).getUserid() %></td>
 						<td><%= memberList.get(i).getUsernm() %></td>
 						<td><%= memberList.get(i).getAlias() %></td>
-						<td><%= memberList.get(i).getReg_dt() %></td>
+						<%-- <td><fmt:parseDate value="<%= memberList.get(i).getReg_dt() %>" pattern="yyyy-MM-dd"/></td> --%>
+						<%-- <td><fmt:formatDate value="${member.reg_dt}" pattern="yyyy-MM-dd"/></td> --%>
 					</tr>	 
 				<% 			
 						}
