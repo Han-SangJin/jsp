@@ -3,11 +3,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
-<%
+<% 
 	List<MemberVo> memberList = (List<MemberVo>) request.getAttribute("memberList");
 	String msg = (String) request.getAttribute("msg");
-%>  
+%>    
  
 <html lang="en">
 <head>
@@ -55,14 +56,15 @@
 					int memSize = memberList.size();
 					if(memSize > 0){
 						for(int i=0; i<memSize; i++){
-				%>			
+				%>			 
 					<tr>
 						<td><%= memberList.get(i).getUserid() %></td>
 						<td><%= memberList.get(i).getUsernm() %></td>
 						<td><%= memberList.get(i).getAlias() %></td>
-						<%-- <td><fmt:parseDate value="<%= memberList.get(i).getReg_dt() %>" pattern="yyyy-MM-dd"/></td> --%>
+						<%-- <td><%= memberList.get(i).getReg_dt() %></td> --%>
+						<td><fmt:formatDate value="<%= memberList.get(i).getReg_dt() %>" pattern="yyyy-MM-dd"/></td>
 						<%-- <td><fmt:formatDate value="${member.reg_dt}" pattern="yyyy-MM-dd"/></td> --%>
-					</tr>	 
+					</tr>	  
 				<% 			
 						}
 					}else{ // 회원정보가 존재하지 않을 경우...
@@ -96,7 +98,7 @@
 			<ul class="pagination">
 				<c:forEach var="i" begin="1" end="${pages }">
 					<c:choose>
-						
+						 
 						<c:when test="${i == page}">
 							<li class="active"><span>${i}</span></li>
 						</c:when>

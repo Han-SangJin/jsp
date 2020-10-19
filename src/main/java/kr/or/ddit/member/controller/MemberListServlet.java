@@ -14,7 +14,7 @@ import kr.or.ddit.common.model.PageVo;
 import kr.or.ddit.member.service.MemberService;
 import kr.or.ddit.member.service.MemberServiceI;
 
-@WebServlet(name = "memberList", urlPatterns = { "/memberList" })
+@WebServlet("/memberList")
 public class MemberListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -35,14 +35,14 @@ public class MemberListServlet extends HttpServlet {
 		
 		//pageSize
 		String pageSize_str = request.getParameter("pageSize");
-		int pageSize = pageSize_str == null ? 1 : Integer.parseInt(pageSize_str);
+		int pageSize = pageSize_str == null ? 5 : Integer.parseInt(pageSize_str);
 		request.setAttribute("pageSize", pageSize);
 		
 		// pageVo : page, pageSize
 		PageVo pageVo = new PageVo(page, pageSize);
-		pageVo.setPage(page);
-		
-		
+//		pageVo.setPage(page);
+			
+		 
 //		request.setAttribute("memeberList", memberService.selectAllMember());
 //		memberService.selectMemberPageList(page) ==> List<MemberVo> ==> Map<String, Object>
 		

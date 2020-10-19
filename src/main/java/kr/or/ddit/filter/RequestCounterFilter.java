@@ -48,7 +48,7 @@ public class RequestCounterFilter implements Filter {
 		// 어떤 자료구조를 쓰면 좋을까???
 		// List, set, Map
 		
-		 
+		
 		
 		// map 객체에서 uri 에 해당하는 요청이 있었는지 확인
 		// 없으면
@@ -69,6 +69,12 @@ public class RequestCounterFilter implements Filter {
 		
 		// 등록된 다른 필터로 요청 위임
 		// 만약에 더이상 등록된 필터가 없을 경우 요청을 처리할 서블릿 / jsp 으로 요청을 전달
+		
+		//전처리 
+		
+		chain.doFilter(request, response);		// servlet 처리;
+		
+		//후처리  
 		
 	}
 	

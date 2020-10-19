@@ -20,7 +20,7 @@
 <%@ include file="/layout/commonLib.jsp" %>
 </head>
 
- 
+  
 <body>   
 <!-- 상단 네비게이션바 -->
 <%@ include file="/layout/header.jsp" %>
@@ -33,11 +33,11 @@
 <!-- 왼쪽 사이드바 -->
 <div class="col-sm-3 col-md-2 sidebar">
 <%@ include file="/layout/left.jsp" %>
-</div> 
-  
+</div>  
+        
  
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				     
+			  	     
 
 <div class="blog-header">
 	<h1 class="blog-title">Main</h1>
@@ -56,7 +56,7 @@
  	 
 			<p>jsp를 통한 웹 프로그래밍 학습</p>
 			<hr>
-			 
+			        
 			<h3>상세내역</h3>
 			<p>JSP과정에서는 다음과 같은 내용을 학습한다.</p>
 			<ul>
