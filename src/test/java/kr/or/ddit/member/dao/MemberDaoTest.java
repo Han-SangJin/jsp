@@ -15,7 +15,9 @@ import kr.or.ddit.member.model.MemberVo;
 
 public class MemberDaoTest {
 	
+	
 	private static final Logger logger = LoggerFactory.getLogger(MemberDaoTest.class);
+	
 	
 	@Test
 	public void getMemberTest() {
@@ -49,7 +51,6 @@ public class MemberDaoTest {
 		/***Then***/
 		assertEquals(15, memberList.size());
 	}
-	
 	 
 	
 	@Test
@@ -81,7 +82,6 @@ public class MemberDaoTest {
 		/***Then***/
 		assertEquals(15, totalCnt);
 	}
-	
 	
 	
 	@Test
