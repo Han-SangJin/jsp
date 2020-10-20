@@ -37,12 +37,12 @@ public class RequestCounterFilter implements Filter {
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		System.out.println("test");
 		logger.debug("RequestCounterFilter.doFilter() chain.doFilter 호출전");
 		
 		HttpServletRequest req = (HttpServletRequest)request;
 		logger.debug("uri : {}" , req.getRequestURI());
 		
-		logger.debug("RequestCounterFilter.doFilter() chain.doFilter 호출후");
 		// uri별 요청 횟수
 		// /memberList  12
 		// /jstl/jstl_fmt_date.jsp  20
@@ -77,7 +77,7 @@ public class RequestCounterFilter implements Filter {
 		chain.doFilter(request, response);		// servlet 처리;
 		
 		//후처리 : servlet 응답생성후 응답이 웹브라우저로 가는단계에서  후속처리
-		
+		logger.debug("RequestCounterFilter.doFilter() chain.doFilter 호출후");
 	}
 	
 	@Override
