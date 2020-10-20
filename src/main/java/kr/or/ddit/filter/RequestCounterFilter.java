@@ -32,16 +32,17 @@ public class RequestCounterFilter implements Filter {
 		ServletContext sc = filterConfig.getServletContext();
 		sc.setAttribute("requestCounterMap", requestCounterMap);
 		
-		
+		 
 	}
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		logger.debug("RequestCounterFilter.doFilter()");
+		logger.debug("RequestCounterFilter.doFilter() chain.doFilter 호출전");
 		
 		HttpServletRequest req = (HttpServletRequest)request;
 		logger.debug("uri : {}" , req.getRequestURI());
 		
+		logger.debug("RequestCounterFilter.doFilter() chain.doFilter 호출후");
 		// uri별 요청 횟수
 		// /memberList  12
 		// /jstl/jstl_fmt_date.jsp  20
@@ -70,11 +71,12 @@ public class RequestCounterFilter implements Filter {
 		// 등록된 다른 필터로 요청 위임
 		// 만약에 더이상 등록된 필터가 없을 경우 요청을 처리할 서블릿 / jsp 으로 요청을 전달
 		
-		//전처리 
+		//전처리 : 요청이 서블릿으로 가기전에 실행되는 부분
+		logger.debug("requestCounterFilter 전처리 부분");
 		
 		chain.doFilter(request, response);		// servlet 처리;
 		
-		//후처리  
+		//후처리 : servlet 응답생성후 응답이 웹브라우저로 가는단계에서  후속처리
 		
 	}
 	
