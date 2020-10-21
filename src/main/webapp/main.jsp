@@ -47,7 +47,7 @@
 <div class="row">
  
 	<div class="col-sm-8 blog-main">
-
+	       
 		<div class="blog-post">
 			<h2 class="blog-post-title">JSP</h2>
 			<p class="blog-post-meta">
@@ -56,7 +56,7 @@
  	 
 			<p>jsp를 통한 웹 프로그래밍 학습</p>
 			<hr>
-			        
+			         
 			<h3>상세내역</h3>
 			<p>JSP과정에서는 다음과 같은 내용을 학습한다.</p>
 			<ul>
