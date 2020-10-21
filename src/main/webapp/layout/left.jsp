@@ -6,6 +6,4 @@
 	<li class="active"><a href="<%=request.getContextPath() %>/main.jsp">Main <span class="sr-only">(current)</span></a></li>
 	<li class="active"><a href="<%=request.getContextPath() %>/memberList">사용자</a></li>
 	<li class="active"><a href="${pageContext.request.contextPath}/selectAllJobs">jobs</a></li>
-		
-
 </ul>  

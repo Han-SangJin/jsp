@@ -23,9 +23,21 @@
 <title>Jsp</title>
 <!-- 레이아웃 추가 -->
 <%@ include file="/layout/commonLib.jsp" %>
+
+<script>
+$(document).ready(function(){
+	$("#memberList tr").on("click", function(){
+		// data-userid
+		var userid = $(this).data("userid");
+		console.log("userid : " + userid);
+	
+		document.location="/member?userid=" + userid;
+	})
+})
+
+</script>
+
 </head>
-
-
 <body>
 <!-- 상단 네비게이션바 -->
 <%@ include file="/layout/header.jsp" %>
@@ -52,12 +64,14 @@
 				 	<td><p>사용자 별명</p></td>
 				 	<td><p>등록 일시</p></td>
 				 </tr>
+				 <tbody id="memberList">
+				 
 				<% 	 
 					int memSize = memberList.size();
 					if(memSize > 0){
 						for(int i=0; i<memSize; i++){
 				%>			 
-					<tr>
+					<tr data-userid="<%= memberList.get(i).getUserid() %>">
 						<td><%= memberList.get(i).getUserid() %></td>
 						<td><%= memberList.get(i).getUsernm() %></td>
 						<td><%= memberList.get(i).getAlias() %></td>
@@ -75,7 +89,7 @@
 				<%	
 					}
 				%>
-				
+				</tbody>
 				
 			</table>
 			
