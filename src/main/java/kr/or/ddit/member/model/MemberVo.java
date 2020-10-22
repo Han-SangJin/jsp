@@ -14,6 +14,26 @@ public class MemberVo {
 	private String zipcode;
 	private String filename;
 	private String realFilename;
+	
+	
+	public MemberVo() {
+	}
+	
+	
+	public MemberVo(String userid, String pass, String usernm, String alias, String addr1, String addr2, String zipcode, String filename, String realFilename) {
+		this.userid = userid;
+		this.pass = pass;
+		this.usernm = usernm;
+		this.alias = alias;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.zipcode = zipcode;
+		this.filename = filename;
+		this.realFilename = realFilename;
+	}
+	
+	
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -74,12 +94,19 @@ public class MemberVo {
 	public void setRealFilename(String realFilename) {
 		this.realFilename = realFilename;
 	}
+	
+	
+	
 	@Override
 	public String toString() {
 		return "MemberVo [userid=" + userid + ", pass=" + pass + ", usernm=" + usernm + ", alias=" + alias + ", addr1="
 				+ addr1 + ", addr2=" + addr2 + ", reg_dt=" + reg_dt + ", zipcode=" + zipcode + ", filename=" + filename
 				+ ", realFilename=" + realFilename + "]";
 	}
+	
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

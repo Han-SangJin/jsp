@@ -37,7 +37,7 @@ public class FileUploadServlet extends HttpServlet {
 		String userid = request.getParameter("userid");
 		String img = request.getParameter("img");
 		 
-
+ 
 //		BufferedReader br = request.getReader();
 //		char[] buffer = new char[512];
 //		while( br.read(buffer) != -1 ) {
@@ -59,7 +59,7 @@ public class FileUploadServlet extends HttpServlet {
 		
 		String fileName = FileUploadUtil.getFilename(imgPart.getHeader("Content-Disposition"));
 		
-		imgPart.write("d:\\upload\\" + fileName);
+		imgPart.write("D:\\upload\\" + fileName);
 		imgPart.delete();
 
 	}

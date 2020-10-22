@@ -1,9 +1,8 @@
-<%@page import="kr.or.ddit.member.model.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-      
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +17,38 @@
 <title>Jsp</title>
 
 <%@ include file="/layout/commonLib.jsp" %>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+$(document).ready(function(){
+	$('#zipcodeBtn').on('click', function(){
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+		        console.log(data)
+		        
+		        $('#addr1').val(data.roadAddress);
+		        $('#zipcode').val(data.zonecode);
+	            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+	            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+	        }	
+	    }).open();
+	})
+
+	
+	$('#upBtn').on('click',function(){
+		// client side - validation
+		// server side - validation
+		// validation 로직은 일단 생략
+		
+		$('#frmUp').submit();
+	})
+	/* initData() */
+})
+</script>	
 
 </head>
+
 <body>
-	 	 
+
 	<%@ include file="/layout/header.jsp" %>
 	
 	<div class="container-fluid">
@@ -32,9 +59,9 @@
 			</div>
 			
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	
 
-				<form id="frm" class="form-horizontal" role="form" enctype="multipart/form-data">
+
+				<form id="frmUp" class="form-horizontal" role="form" action="${cp }/memberUpdate" method="POST" enctype="multipart/form-data">
 					<!-- <div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
@@ -42,81 +69,77 @@
 								placeholder="사용자 아이디">
 						</div>
 					</div> -->
-					 
+					
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 사진</label>
 						<div class="col-sm-10">
-							<%-- <img src="${cp}/profile/${memberVo.filename}"/> --%>
-							
+							<%--  <img src="${cp}/profile/${memberVo.filename}"/> --%>
 							<img src="${cp}/profileImg?userid=${memberVo.userid}"/>
+							<input type="file" name="realFilename" >${memberVo.filename}<br>
+							${cp}/profileImg?userid=${memberVo.userid}
 						</div> 
 					</div>
-						
+						  
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
-						<div id="ddd" class="col-sm-10">
-							<label class="control-label ">${memberVo.userid}</label>
+						<div class="col-sm-10">
+							<input type="text" name="userid" value="${memberVo.userid}" READONLY>
 						</div>
 					</div>
-	
+			
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
 						<div class="col-sm-10">
-							<label class="control-label">${memberVo.usernm}</label>
+							<input type="text" name="usernm" value="${memberVo.usernm}">
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">별명</label>
 						<div class="col-sm-10">
-							<label class="control-label">${memberVo.alias}</label>
+							<input type="text" name="alias" value="${memberVo.alias}">
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<label for="pass" class="col-sm-2 control-label">Password</label>
 						<div class="col-sm-10">
-							<label class="control-label">*******</label>
+							<input type="text" name="pass" value="${memberVo.pass}">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="addr1" class="col-sm-2 control-label">주소1</label>
 						<div class="col-sm-10">
-							<label class="control-label">${memberVo.addr1}</label>
+							<input id="addr1" type="text" name="addr1" value="${memberVo.addr1}" READONLY>
+							<button id="zipcodeBtn" type="button" class="btn btn-default">우편번호 찾기</button>
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<label for="addr2" class="col-sm-2 control-label">주소2</label>
 						<div class="col-sm-10">
-							<label class="control-label">${memberVo.addr2}</label>
+							<input type="text" name="addr2" value="${memberVo.addr2}">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<label for="zipcode" class="col-sm-2 control-label">우편번호</label>
 						<div class="col-sm-10">
-							<label class="control-label">${memberVo.zipcode}</label>
+							<input id="zipcode" type="text" name="zipcode" value="${memberVo.zipcode}" READONLY >
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="reg_dt" class="col-sm-2 control-label">등록일자</label>
 						<div class="col-sm-10">
-							<label class="control-label"><fmt:formatDate value="${memberVo.reg_dt}" pattern="yyyy-MM-dd"/></label>
+							
+							<button id="upBtn" class="btn btn-default" >수정 완료</button>
 						</div>
-					</div>
-						
-					<div class="form-group">
-						<div class="col-sm-10">
-							<a id="modiBtn" href="${cp}/memberUpdate?userid=${memberVo.userid}">
-							<button type="button" class="btn btn-default">사용자 수정</button></a>
-						</div>
-					</div>
-					
+					</div> 
 					
 				</form>
 			</div>
-		</div>
+		</div> 
 	</div>
 </body>
 </html>

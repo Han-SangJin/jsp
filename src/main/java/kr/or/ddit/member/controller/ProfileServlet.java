@@ -38,8 +38,7 @@ public class ProfileServlet extends HttpServlet {
 		// 경로 확인 후 파일 입츌룍울 통해 응답생성
 		// 파일 읽기
 		// 응답 생성 
-		String path = memberVo.getFilename();	// 파일경로
-		System.out.println(path);
+		System.out.println("memberVo.getFilename()"+ memberVo.getFilename());
 		FileInputStream fis = new FileInputStream(memberVo.getFilename());
 		ServletOutputStream sos = response.getOutputStream();
 		 

@@ -49,11 +49,31 @@ public class MemberService implements MemberServiceI {
 		sqlSession.close();
 		return map;
 	}
-
+	
 	
 	@Override
 	public int selectMemberTotalCnt() {
 		SqlSession sqlSession = MybatisUtil.getSession();
 		return memberDao.selectMemberTotalCnt(sqlSession);
+	}
+	
+	
+	@Override
+	public int insertMember(MemberVo memberVo) {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		return memberDao.insertMember(memberVo);
+	}
+
+	
+	@Override
+	public int deleteMember(String userid) {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		return memberDao.deleteMember(userid);
+	}
+		
+	@Override
+	public int updateMember(MemberVo memberVo) {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		return memberDao.updateMember(memberVo);
 	}
 }

@@ -34,7 +34,7 @@ $(document).ready(function(){
 		document.location="/member?userid=" + userid;
 	})
 })
-
+  
 </script>
 
 </head>
@@ -46,7 +46,7 @@ $(document).ready(function(){
 <div class="container-fluid">
 		<div class="row">
 
-
+ 
 <!-- 왼쪽 사이드 바 -->			
 <div class="col-sm-3 col-md-2 sidebar">
   <%@ include file="/layout/left.jsp" %>
@@ -102,8 +102,8 @@ $(document).ready(function(){
 			 <% 	
 			 	}	
 			 %> 
-		</div>
-		<a class="btn btn-default pull-right">사용자 등록</a>
+		</div> 
+		<a href="/memberRegist" class="btn btn-default pull-right">사용자 등록</a>
 		
  		 page : ${pageVo.getpage() }
  		 pages : ${pages }

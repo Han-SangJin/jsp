@@ -53,7 +53,7 @@ public class MemberListServlet extends HttpServlet {
 		request.setAttribute("memberList", map.get("memberList"));
 		request.setAttribute("pages", map.get("pages"));
 		
-		request.getRequestDispatcher("/member/memberList.jsp").forward(request, response);;
+		request.getRequestDispatcher("/member/memberList.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
