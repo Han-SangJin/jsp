@@ -24,12 +24,12 @@
 <body>   
 <!-- 상단 네비게이션바 -->
 <%@ include file="/layout/header.jsp" %>
-   
+    
     
 <div class="container-fluid">
 		<div class="row">
 			
-		 	  
+		 	   
 <!-- 왼쪽 사이드바 -->
 <div class="col-sm-3 col-md-2 sidebar">
 <%@ include file="/layout/left.jsp" %>

@@ -72,7 +72,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		String filePath = "";
 		
 		if(profile.getSize() > 0) {
-			filePath = "D:\\profile\\" + fileName + ext;
+			filePath = "C:\\profile\\" + fileName + ext;
 			System.out.println("filePath : " + filePath);
 			profile.write(filePath);
 		}

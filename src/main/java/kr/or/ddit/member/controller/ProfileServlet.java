@@ -41,7 +41,7 @@ public class ProfileServlet extends HttpServlet {
 		System.out.println("memberVo.getFilename()"+ memberVo.getFilename());
 		FileInputStream fis = new FileInputStream(memberVo.getFilename());
 		ServletOutputStream sos = response.getOutputStream();
-		 
+		
 		byte[] buffer = new byte[512];
 		
 		while(fis.read(buffer) != -1) {
