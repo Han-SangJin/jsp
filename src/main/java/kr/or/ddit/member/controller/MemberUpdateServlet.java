@@ -25,63 +25,79 @@ public class MemberUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LoggerFactory.getLogger(MemberRegistServlet.class);   
 	private MemberServiceI memberService;   
+	MemberVo memberVo;
+	String path = "";
+	String real = "";
 	
 	@Override
 	public void init() throws ServletException {
 		memberService = new MemberService();
 	}
+
 	
-	public MemberUpdateServlet() {
-		super();
-	}
-		
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String userid = request.getParameter("userid");
 		System.out.println("userid : " + userid);
-		MemberVo memberVo = memberService.getMember(userid);
+		memberVo = memberService.getMember(userid);
 		
 		request.setAttribute("memberVo", memberVo);
 		request.getRequestDispatcher("/member/memberUpdate.jsp").forward(request, response);
-		
-		
-		
 	}
+	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String userid = request.getParameter("userid");
 		String usernm = request.getParameter("usernm");
+		System.out.println(usernm);
 		String alias = request.getParameter("alias");
 		String pass = request.getParameter("pass");
 		String addr1 = request.getParameter("addr1");
 		String addr2 = request.getParameter("addr2");
 		String zipcode = request.getParameter("zipcode");
-			
+		
 		logger.debug("arameter : {}, {}, {}, {}, {}, {}, {}",
 				userid, usernm, alias, pass, addr1, addr2, zipcode );
-			 
-		Part profile = request.getPart("realFilename");;
-		logger.debug("file : {}", profile.getHeader("Content-Disposition"));
-		String realFilename = FileUploadUtil.getFilename(profile.getHeader("Content-Disposition"));
-		System.out.println("realFilename : " + realFilename);
-		String ext = (".").concat(FileUploadUtil.getExtension(realFilename));
-		System.out.println("ext : " + ext);
-		String fileName = UUID.randomUUID().toString();
-		System.out.println("fileName : " + fileName);
-		String filePath = "";
 		
-		if(profile.getSize() > 0) {
-			filePath = "D:\\profile\\" + fileName + ext;
-			System.out.println("filePath : " + filePath);
-			profile.write(filePath);
+		
+		
+		Part profile = request.getPart("realFilename");
+		System.out.println("profile" + profile);
+			
+		if(profile == null || profile.equals("")) {
+			System.out.println("이미지 없음");
+			
+		}else {
+			logger.debug("file : {}", profile.getHeader("Content-Disposition"));
+			String realFilename = FileUploadUtil.getFilename(profile.getHeader("Content-Disposition"));
+			real = realFilename;
+			System.out.println("realFilename : " + realFilename);
+			String ext = (".").concat(FileUploadUtil.getExtension(realFilename));
+			System.out.println("ext : " + ext);
+			String fileName = UUID.randomUUID().toString();
+			System.out.println("fileName : " + fileName);
+			
+			if(realFilename == null || realFilename.equals("")) {
+				System.out.println("memberVo.getRealFilename()" + memberVo.getRealFilename());
+				real = memberVo.getRealFilename();
+				path = memberVo.getFilename();
+			}
+				
+			if(profile.getSize() > 0) {
+				String filePath = "D:\\profile\\" + fileName + ext;
+				System.out.println("filePath : " + filePath);
+				profile.write(filePath);
+				path = filePath;
+			}
 		}
-		
 		// 사용자 정보 등록
-		MemberVo memberVo = new MemberVo(userid,pass,usernm,alias,addr1,addr2,zipcode,filePath,realFilename);
-		
+		MemberVo memberVo = new MemberVo(userid,pass,usernm,alias,addr1,addr2,zipcode,path,real);
 		int insertCnt = memberService.updateMember(memberVo);
-		
+		System.out.println("usernm"+usernm);
+		System.out.println("path"+path);
+		System.out.println("real"+real);
+		 
 		
 		/*
 		   Forward 는 Web Container 차원에서 페이지의 이동만 존재합니다. 
@@ -99,6 +115,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		// 1건이 입력되었을때 : 정상 - memberList 페이지로 이동
 		if(insertCnt == 1){
 //			request.getRequestDispatcher("/memberList").forward(request, response);
+			System.out.println("sendRedirect 실행");
 			response.sendRedirect(request.getContextPath() + "/member?userid=" + userid);
 		}
 			

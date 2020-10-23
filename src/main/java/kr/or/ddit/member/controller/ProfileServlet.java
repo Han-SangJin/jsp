@@ -38,21 +38,26 @@ public class ProfileServlet extends HttpServlet {
 		// 경로 확인 후 파일 입츌룍울 통해 응답생성
 		// 파일 읽기
 		// 응답 생성 
-		System.out.println("memberVo.getFilename()"+ memberVo.getFilename());
-		System.out.println(memberVo.getRealFilename());
-		FileInputStream fis = new FileInputStream(memberVo.getFilename());
-		ServletOutputStream sos = response.getOutputStream();
+		System.out.println("memberVo.getFilename()" + memberVo.getFilename());
+		System.out.println("memberVo.getRealFilename()" + memberVo.getRealFilename());
 		
-		byte[] buffer = new byte[512];
 		
-		while(fis.read(buffer) != -1) {
-			sos.write(buffer);
+		if(memberVo.getFilename() != null) {
+			
+			FileInputStream fis = new FileInputStream(memberVo.getFilename());
+			
+			ServletOutputStream sos = response.getOutputStream();
+			
+			byte[] buffer = new byte[512];
+			
+			while(fis.read(buffer) != -1) {
+				sos.write(buffer);
+			}
+			 
+			fis.close();
+			sos.flush();
+			sos.close();
 		}
-		
-		 
-		fis.close();
-		sos.flush();
-		sos.close();
 	}
 
 }
