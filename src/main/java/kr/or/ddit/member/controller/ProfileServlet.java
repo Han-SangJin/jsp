@@ -39,6 +39,7 @@ public class ProfileServlet extends HttpServlet {
 		// 파일 읽기
 		// 응답 생성 
 		System.out.println("memberVo.getFilename()"+ memberVo.getFilename());
+		System.out.println(memberVo.getRealFilename());
 		FileInputStream fis = new FileInputStream(memberVo.getFilename());
 		ServletOutputStream sos = response.getOutputStream();
 		

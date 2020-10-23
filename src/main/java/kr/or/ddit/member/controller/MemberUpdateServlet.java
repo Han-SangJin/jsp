@@ -76,7 +76,7 @@ public class MemberUpdateServlet extends HttpServlet {
 			System.out.println("filePath : " + filePath);
 			profile.write(filePath);
 		}
-		 
+		
 		// 사용자 정보 등록
 		MemberVo memberVo = new MemberVo(userid,pass,usernm,alias,addr1,addr2,zipcode,filePath,realFilename);
 		
