@@ -18,7 +18,14 @@
 <title>Jsp</title>
 
 <%@ include file="/layout/commonLib.jsp" %>
+<script>
+$(document).ready(function(){
+	$('#profileDownBtn').on('click',function(){
+		document.location="profileDownload?userid=${memberVo.userid}"
+	})
 
+})
+</script>
 </head>
 <body>
 	 	 
@@ -48,7 +55,8 @@
 						<div class="col-sm-10">
 							<%-- <img src="${cp}/profile/${memberVo.filename}"/> --%>
 							
-							<img src="${cp}/profileImg?userid=${memberVo.userid}"/>
+							<img src="${cp}/profileImg?userid=${memberVo.userid}"/><br>
+							<button id="profileDownBtn" type="button" class="btn btn-default">다운로드 :${memberVo.realFilename}</button></a>
 						</div> 
 					</div>
 						

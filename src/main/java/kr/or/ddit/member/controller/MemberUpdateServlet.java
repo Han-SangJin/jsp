@@ -72,7 +72,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		String filePath = "";
 		
 		if(profile.getSize() > 0) {
-			filePath = "C:\\profile\\" + fileName + ext;
+			filePath = "D:\\profile\\" + fileName + ext;
 			System.out.println("filePath : " + filePath);
 			profile.write(filePath);
 		}
@@ -82,7 +82,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		
 		int insertCnt = memberService.updateMember(memberVo);
 		
-		 
+		
 		/*
 		   Forward 는 Web Container 차원에서 페이지의 이동만 존재합니다. 
 		   실제로 웹 브라우저는 다른 페이지로 이동했음을 알 수 없습니다. 

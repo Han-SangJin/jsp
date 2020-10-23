@@ -61,7 +61,7 @@ public class MemberRegistServlet extends HttpServlet {
 		String filePath = "";
 		
 		if(profile.getSize() > 0) {
-			filePath = "C:\\profile\\" + fileName + ext;
+			filePath = "D:\\profile\\" + fileName + ext;
 			profile.write(filePath);
 		}
 		 

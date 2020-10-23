@@ -85,7 +85,7 @@ function initData(){
 							<%-- <img src="${cp}/profileImg?userid=${memberVo.userid}"/> --%>
 							<input type="file" name="realFilename"/>						</div> 
 					</div>
-						
+					
 					<div class="form-group">
 						<label for="userid" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
