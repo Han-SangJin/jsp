@@ -20,7 +20,7 @@
 <%@ include file="/layout/commonLib.jsp" %>
 </head>
 
-  
+   
 <body>   
 <!-- 상단 네비게이션바 -->
 <%@ include file="/layout/header.jsp" %>

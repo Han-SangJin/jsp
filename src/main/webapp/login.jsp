@@ -25,7 +25,7 @@
 	
 	
 	<script>
-		  
+		   
 		$(function(){
 			
 			// remember me cookie 확인
@@ -83,7 +83,7 @@
 			return "";
 		}	
 
-
+ 
 		// 쿠키 날짜 설정
 		function setCookie(cookieName, cookieValue, expires){
 			//"USERNM=brown; path=/; expries=Wed, 07 Oct 2020 00:38:35 GMT;"
