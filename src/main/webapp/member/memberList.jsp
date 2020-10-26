@@ -79,7 +79,7 @@ $(document).ready(function(){
 						<td><fmt:formatDate value="<%= memberList.get(i).getReg_dt() %>" pattern="yyyy-MM-dd"/></td>
 						<%-- <td><fmt:formatDate value="${member.reg_dt}" pattern="yyyy-MM-dd"/></td> --%>
 					</tr>	  
-				<% 			
+				<% 			  
 						}
 					}else{ // 회원정보가 존재하지 않을 경우...
 				  %> 

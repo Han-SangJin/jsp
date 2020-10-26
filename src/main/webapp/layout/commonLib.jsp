@@ -7,4 +7,4 @@
 
 <link href="${cp}/css/dashboard.css" rel="stylesheet">
 <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
-<link href="${cp}/css/blog.css?v=2" rel="stylesheet">
+<link href="${cp}/css/blog.css?v=2" rel="stylesheet"> 
