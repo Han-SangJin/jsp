@@ -123,7 +123,7 @@ $(document).ready(function(){
 					</c:choose>				
 				</c:forEach>
 			</ul>
-	</div>
+		</div>
 </div>
 	</div>
 		</div>

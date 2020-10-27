@@ -43,7 +43,7 @@ public class MemberListServlet extends HttpServlet {
 //		pageVo.setPage(page);
 			
 		 
-//		request.setAttribute("memeberList", memberService.selectAllMember());
+		// request.setAttribute("memeberList", memberService.selectAllMember());
 //		memberService.selectMemberPageList(page) ==> List<MemberVo> ==> Map<String, Object>
 		
 		
