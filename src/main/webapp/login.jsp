@@ -35,7 +35,7 @@
 				$("#inputEmail").val(Cookies.get("USERNM"))
 				//console.log("체크");
 			} 
-
+  
 				  
 			// sign in b버튼이 클릭 되엇을때 이벤크 핸들러
 			$("button").on('click',function(){

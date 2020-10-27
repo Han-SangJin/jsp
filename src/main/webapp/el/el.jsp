@@ -26,7 +26,7 @@
 			session(request,session) 			: <input type="radio" name="scope" value="sessionValue" <%=sessionParam %>/> <br>
 	application(request, session, application)	: <input type="radio" name="scope" value="applicationValue" <%=applicationParam %>/> <br>
 		 										  <button type="submit">전송</button>
-	 
+	  
 	</form>
 	
 	attr : ${attr } (page->request->session->application) <br>

@@ -19,7 +19,7 @@
 			<td>${user.key }</td>
 			<td>${user.value }</td>
 			<br>
-		</tr>
+		</tr> 
 	</c:forEach>
 </body>
 </html>
