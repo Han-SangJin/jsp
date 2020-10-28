@@ -93,12 +93,12 @@ public class MemberDao implements MemberDaoI {
 		sqlSession.close();
 		return deleteCnt;
 	}
-
+	
 
 	@Override
 	public int updateMember(MemberVo memberVo) {
 		SqlSession sqlSession = MybatisUtil.getSession();
-		int deleteCnt = sqlSession.delete("member.updateMember", memberVo);
+		int deleteCnt = sqlSession.update("member.updateMember", memberVo);
 		
 		if(deleteCnt ==1){
 			sqlSession.commit();

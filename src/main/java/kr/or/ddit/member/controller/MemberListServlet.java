@@ -35,14 +35,15 @@ public class MemberListServlet extends HttpServlet {
 		
 		//pageSize
 		String pageSize_str = request.getParameter("pageSize");
+		System.out.println("pageSize_str : " + pageSize_str);
 		int pageSize = pageSize_str == null ? 5 : Integer.parseInt(pageSize_str);
 		request.setAttribute("pageSize", pageSize);
 		
 		// pageVo : page, pageSize
 		PageVo pageVo = new PageVo(page, pageSize);
 //		pageVo.setPage(page);
-			
-		 
+		
+		
 		// request.setAttribute("memeberList", memberService.selectAllMember());
 //		memberService.selectMemberPageList(page) ==> List<MemberVo> ==> Map<String, Object>
 		
