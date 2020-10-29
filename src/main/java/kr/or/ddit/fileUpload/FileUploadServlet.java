@@ -1,5 +1,6 @@
 package kr.or.ddit.fileUpload;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -23,6 +24,8 @@ public class FileUploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final Logger logger = LoggerFactory.getLogger(FileUploadServlet.class);
+	 
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -30,6 +33,8 @@ public class FileUploadServlet extends HttpServlet {
 		request.getRequestDispatcher("/fileUpload/uploadView.jsp").forward(request, response);
 	}
 
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.debug("post request.getContentType() : {}", request.getContentType());
 		
@@ -44,7 +49,7 @@ public class FileUploadServlet extends HttpServlet {
 //				System.out.print(buffer[i]);
 //			}
 //		}
-		 
+		
 		
 		 
 		logger.debug("userid : {}", userid);

@@ -22,7 +22,7 @@
       </dataSource>
     </environment>
   </environments>
-	  
+	   
   <mappers>
     <mapper resource="kr/or/ddit/db/mapper/member.xml"/>
     <mapper resource="kr/or/ddit/db/mapper/jobs.xml"/>

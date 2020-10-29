@@ -68,8 +68,8 @@
 			<version>4.13</version>
 			<scope>test</scope>
 		</dependency>
-
-	
+		
+		
 		<!-- ojdbc -->
 		<dependency>
 			<groupId>com.oracle</groupId>
@@ -77,8 +77,8 @@
 			<version>12.1.0.2</version>
 			<scope>provided</scope>
 		</dependency>
-
-
+		
+		
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

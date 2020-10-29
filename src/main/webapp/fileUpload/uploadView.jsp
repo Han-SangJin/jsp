@@ -13,5 +13,5 @@
 			<!-- 값을 미리 설정하는게 불가능 -- 보안문제 -->
 		<button type="submit">전송</button>
 	</form>
-</body>
+</body> 
 </html>

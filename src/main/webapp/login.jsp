@@ -24,7 +24,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/js.cookie-2.2.1.min.js"></script>
 	
 	
-	<script>
+	<script> 
 		     
 		$(function(){
 			

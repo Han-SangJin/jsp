@@ -49,7 +49,7 @@ public class MemberRegistServlet extends HttpServlet {
 		String addr1 = request.getParameter("addr1");
 		String addr2 = request.getParameter("addr2");
 		String zipcode = request.getParameter("zipcode");
-			
+		
 		logger.debug("arameter : {}, {}, {}, {}, {}, {}, {}",
 				userid, usernm, alias, pass, addr1, addr2, zipcode );
 			 
@@ -61,7 +61,7 @@ public class MemberRegistServlet extends HttpServlet {
 		String filePath = "";
 		
 		if(profile.getSize() > 0) {
-			filePath = "D:\\profile\\" + fileName + ext;
+			filePath = "D:\\attachfile\\" + fileName + ext;
 			profile.write(filePath);
 		}
 		 
