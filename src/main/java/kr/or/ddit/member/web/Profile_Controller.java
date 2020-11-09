@@ -27,7 +27,7 @@ public class Profile_Controller {
 		return "profileImgView"; 									// return new ProfileImgView();
 		// filepath 를 가지고
 		// view package -> profileImgView.java 로 이동
-				
+		
 		// application-context.xml 에 bean 객체 등록
 	}
 }
