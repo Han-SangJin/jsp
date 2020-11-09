@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 //단위 : byte
 // 1MB = 1024KB = 1024 * 1024
 // 10MB = 1024 * 1024 * 15
-@WebServlet("/fileUpload")
+@WebServlet("/fileUpload1")
 @MultipartConfig(maxFileSize = 1024*1024*5, maxRequestSize = 1024*1024*26 )
 public class FileUploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -23,7 +23,7 @@ $(document).ready(function(){
 	$('#profileDownBtn').on('click',function(){
 		document.location="/profileDownload?userid=${memberVo.userid}"
 	})
-
+	
 })  
 </script>
 </head>
