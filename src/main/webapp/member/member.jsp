@@ -28,7 +28,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	 	 
+	
 	<%@ include file="/layout/header.jsp" %>
 	
 	<div class="container-fluid">
