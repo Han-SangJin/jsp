@@ -48,9 +48,10 @@ public class MemberListController {
 		List<MemberVo> memberList = memberService.selectAllMember();
 		
 		model.addAttribute("memberList", memberList);
-
-		return "member/memberList";	
-			
+			 // member/memberList
+			 // tiles.memberList;
+		return "tiles.member.memberListContent";	
+		
 	}
 
 }
