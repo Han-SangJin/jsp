@@ -70,10 +70,33 @@ public class MemberService implements MemberServiceI {
 	public int updateMember(MemberVo memberVo) {
 		return memberDao.updateMember(memberVo);
 	}
+	 
+	
+	
 	@Override
 	public Map<String, Object> selectMemberPageList(PageVo pageVo) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		SqlSession sqlSession = MybatisUtil.getSession();
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("memberList", memberDao.selectMemberPageList(sqlSession,pageVo));
+		
+		
+		// 15건 ==(페이지사이즈 7)==> 3페이지
+		// 15/7 ==  2.14.. ==(올림)==> 3페이지 
+		int totalCnt = memberDao.selectMemberTotalCnt(sqlSession);
+		int pages = (int)Math.ceil((double)totalCnt/7);
+		map.put("pages", pages);
+		
+		sqlSession.close();
+		return map;
+	}
+	 
+	
+	@Override
+	public int selectMemberTotalCnt() {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		return memberDao.selectMemberTotalCnt(sqlSession);
 	}
 
 }

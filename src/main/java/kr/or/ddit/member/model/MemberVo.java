@@ -1,6 +1,7 @@
 package kr.or.ddit.member.model;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -98,6 +99,13 @@ public class MemberVo {
 	public Date getReg_dt() {
 		return reg_dt;
 	}
+	
+	
+	public String getFmt_reg_dt() {
+		return reg_dt == null ? "y" : new SimpleDateFormat("yyyy-MM-dd").format(reg_dt);
+	}
+	
+	
 	public void setReg_dt(Date reg_dt) {
 		this.reg_dt = reg_dt;
 	}

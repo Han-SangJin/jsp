@@ -27,7 +27,7 @@ public class MemberController {
 	 
 	@Resource(name="memberService")
 	MemberServiceI memberService;
-	
+	 
 	
 	@RequestMapping(path = "/view", method = RequestMethod.GET)	
 	public String getView() {
@@ -46,5 +46,19 @@ public class MemberController {
 		model.addAttribute("memberVo", memberVo);
 		//forward:/WEB-INF/views/   .jsp
 		return "tiles.member.memberContent";	
+	}
+	
+	
+	
+	@RequestMapping("/memberAjaxPage")
+	public String memberAjaxPage() {
+		return "tiles.member.memberAjaxPage";
+	}
+	
+	
+	@RequestMapping("/memberAjax")
+	public String memberAjax(String userid, Model model) {
+		model.addAttribute("memberVo", memberService.getMember(userid));
+		return "jsonView";
 	}
 }
