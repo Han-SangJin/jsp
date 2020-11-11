@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import org.junit.Test;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -46,13 +47,15 @@ public class LoginControllerTest extends WebTestConfig {
 				.andExpect(status().isOk()) // idOk = erorr code : ex)200, 404
 				.andExpect(view().name("login/view")); // name = 페이지이름 가져오기
 	}
-
+	
 	// 로그인 요청 테스트(정상적인 경우)
 	@Test
 	public void processSuccessTest() throws Exception {
-		mockMvc.perform(post("/login/process").param("userid", "brown").param("pass", "brownPass"))
-				.andExpect(status().is(200)) // 200 은 정상
-				.andExpect(view().name("main")).andExpect(model().attributeExists("to_day"));
+		mockMvc.perform(post("/login/process").contentType(MediaType.APPLICATION_FORM_URLENCODED)
+				.param("userid", "brown")
+				.param("pass", "brownPass"))
+		.andExpect(status().is(200)) // 200 은 정상
+		.andExpect(view().name("main")).andExpect(model().attributeExists("to_day"));
 
 	}
 
