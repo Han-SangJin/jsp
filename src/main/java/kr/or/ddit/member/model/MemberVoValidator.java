@@ -6,6 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 public class MemberVoValidator implements Validator{
+	
 	private static final Logger logger = LoggerFactory.getLogger(MemberVoValidator.class);
 
 	// 검증하려고 하는 객체가 MemberVoValidator 에서 검증이 가능한 객체인지 boolean으로 리턴하는 메소드

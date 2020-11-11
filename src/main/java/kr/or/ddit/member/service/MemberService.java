@@ -7,8 +7,10 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import ch.qos.logback.classic.Logger;
 import kr.or.ddit.common.model.PageVo;
 import kr.or.ddit.db.MybatisUtil;
 import kr.or.ddit.member.dao.MemberDaoI;
@@ -16,6 +18,8 @@ import kr.or.ddit.member.model.MemberVo;
 
 @Service("memberService")
 public class MemberService implements MemberServiceI {
+	
+	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(MemberService.class);
 	
 	@Resource(name="memberDao")
 	private MemberDaoI memberDao;
@@ -57,9 +61,24 @@ public class MemberService implements MemberServiceI {
 	
 	@Override
 	public int insertMember(MemberVo memberVo) {
+//		logger.debug("첫번째 insert 시작전");
+//		memberDao.insertMember(memberVo);
+//		logger.debug("첫번째 insert 시작후");
+//		
+//		logger.debug("두번째 insert 시작전");
+//		memberDao.insertMember(memberVo);
+//		logger.debug("두번째 insert 시작후");
+		
+		
+		// 첫번재 쿼리는 정상적으로 실행되지만
+		// 두번째 쿼리에서 동일한 데이터를 이별가형 primary key 제약조건에 의해
+		// sql 실행실패
+		// 첫번재 쿼리는 성공했지만 트랜잭션 설정을 service 레벨에 설정하였기 때문에
+		// 서비스 메소드에서 실행된 모든 쿼리를 rollback 처리한다
+		
 		return memberDao.insertMember(memberVo);
 	}
-
+		
 	
 	@Override
 	public int deleteMember(String userid) {

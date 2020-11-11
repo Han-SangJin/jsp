@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import kr.or.ddit.common.model.PageVo;
@@ -16,6 +18,7 @@ import kr.or.ddit.member.model.MemberVo;
 @Repository("memberDao")	
 public class MemberDao implements MemberDaoI {
 	
+	private static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	
 	@Resource(name="sqlSessionTemplate")
 	private SqlSessionTemplate sqlSession;
@@ -49,6 +52,7 @@ public class MemberDao implements MemberDaoI {
 	public List<MemberVo> selectAllMember() {
 		//SqlSession sqlSession = MybatisUtil.getSession();
 		List<MemberVo> memberList =  sqlSession.selectList("member.selectAllMember");
+		logger.debug("memberList log4jdbc {} :");
 		
 		//sqlSession.close();
 		return memberList;
