@@ -24,7 +24,7 @@ public class FileUploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final Logger logger = LoggerFactory.getLogger(FileUploadServlet.class);
-	
+	 
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class FileUploadServlet extends HttpServlet {
 		logger.debug("get request.getContentType() : {}", request.getContentType());
 		request.getRequestDispatcher("/fileUpload/uploadView.jsp").forward(request, response);
 	}
-	
+
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

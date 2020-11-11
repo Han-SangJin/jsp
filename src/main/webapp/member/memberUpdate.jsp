@@ -75,7 +75,7 @@ $(document).ready(function(){
 						<div class="col-sm-10">
 							<%--  <img src="${cp}/profile/${memberVo.filename}"/> --%>
 							<img src="${cp}/profileImg?userid=${memberVo.userid}"/>
-							<input type="file" name="realFilename">${memberVo.filename}<br>
+							<input type="file" name="realFilename" >${memberVo.filename}<br>
 							${cp}/profileImg?userid=${memberVo.userid}
 						</div> 
 					</div>

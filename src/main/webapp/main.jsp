@@ -19,7 +19,7 @@
 <!-- 레이아웃 추가 -->
 <%@ include file="/layout/commonLib.jsp" %>
 </head>
- 
+
    
 <body>   
 <!-- 상단 네비게이션바 -->
@@ -35,7 +35,7 @@
 <%@ include file="/layout/left.jsp" %>
 </div>  
         
-   
+ 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			  	     
 
@@ -71,8 +71,7 @@
 		</div>
 	</div>
 	<!-- /.blog-main -->
-</div>	
-</div>
+</div>	</div>
 		</div>
 	</div>
 </body>
