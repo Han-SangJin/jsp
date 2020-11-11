@@ -45,8 +45,8 @@ public class MemberRegistControllerTest extends WebTestConfig {
 						.param("addr1", "addr1테스트")
 						.param("addr2", "addr2테스트") 
 						.param("zipcode", "11"))					// 디비 접속까지 뜨는데 insert값이 0으로 나오던 이유  	
-		.andExpect(status().is(302))				//200 insert 실패 // 302 insert 성공 / 성공테스트 하려면 302로 바꿔서 실행
-		.andExpect(view().name("redirect:/memberList/process"));	// 200으로 바꿔서 실행 해도 insert 값이 0 나와서 실패 조건문으로 가기때문에 페이지 에러발생
+		.andExpect(status().is(200))				//200 insert 실패 // 302 insert 성공 / 성공테스트 하려면 302로 바꿔서 실행
+		.andExpect(view().name("tiles.member.memberRegistContent"));	// 200으로 바꿔서 실행 해도 insert 값이 0 나와서 실패 조건문으로 가기때문에 페이지 에러발생
 	}																// 테스트 통과하려면 insert 성공하는 수밖에없음..
 	//오라클에서 zipcode의 데이터 크기가 5byte 였는데 범위가 넘어가는 숫자를 넣어서 안되는것 이였고	
 	// insert 부분에 try ctach 예외처리가 되있어 junit 이나 콘솔창에도 에러가 뜨지 않았던것	
@@ -67,7 +67,7 @@ public class MemberRegistControllerTest extends WebTestConfig {
 						.param("addr2", "테스트")
 						.param("zipcode", "테스트"))
 		.andExpect(status().is(200))						//200 은 정상
-		.andExpect(view().name("member/memberRegist"));
+		.andExpect(view().name("tiles.member.memberRegistContent"));
 	}
 	
 	

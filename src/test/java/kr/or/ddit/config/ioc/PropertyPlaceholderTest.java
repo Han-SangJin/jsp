@@ -28,7 +28,7 @@ public class PropertyPlaceholderTest {
 		assertEquals("HSJ", dbProperty.getUser());
 		assertEquals("java", dbProperty.getPass());
 		assertEquals("oracle.jdbc.driver.OracleDriver", dbProperty.getDriver());
-		assertEquals("jdbc:oracle:thin:@112.220.114.130:1521/xe", dbProperty.getUrl());
+		assertEquals("jdbc:oracle:thin:@localhost:1521/xe", dbProperty.getUrl());
 	}
 	
 }

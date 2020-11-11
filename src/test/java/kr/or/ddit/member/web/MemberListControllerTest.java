@@ -27,7 +27,7 @@ public class MemberListControllerTest extends WebTestConfig {
 	public void processSuccessTest() throws Exception {
 		mockMvc.perform(post("/memberList/process"))
 		.andExpect(status().is(200))							//200 은 정상
-		.andExpect(view().name("member/memberList"))			// url 값 확인
+		.andExpect(view().name("tiles.member.memberListContent"))			// url 값 확인
 		.andExpect(model().attributeExists("memberList"));		// memberList 이름으로 된 키값이 있는지 확인
 	}
 	

@@ -24,7 +24,7 @@ public class MemberUpdateControllerTest extends WebTestConfig {
 						.param("userid", "hsj"))
 		.andExpect(status().isOk())
 		.andExpect(model().attributeExists("memberVo"))
-		.andExpect(view().name("member/memberUpdate"));
+		.andExpect(view().name("tiles.member.memberUpdateContent"));
 	}
 	
 	
@@ -64,7 +64,7 @@ public class MemberUpdateControllerTest extends WebTestConfig {
 						.param("zipcode", "3322")
 						.param("userid", "noylit1"))
 		.andExpect(status().is(200))
-		.andExpect(view().name("member/memberUpdate"));
+		.andExpect(view().name("tiles.member.memberUpdateContent"));
 	}
 		
 }

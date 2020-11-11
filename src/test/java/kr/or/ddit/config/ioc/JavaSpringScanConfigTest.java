@@ -31,7 +31,7 @@ public class JavaSpringScanConfigTest {
 	public void beanTest() {
 		
 			/***Given***/
-
+			
 			/***When***/
 			BoardVo  boardVo = boardService.getBoard(1);
 			

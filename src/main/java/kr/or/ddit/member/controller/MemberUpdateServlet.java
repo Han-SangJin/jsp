@@ -33,7 +33,7 @@ public class MemberUpdateServlet extends HttpServlet {
 	public void init() throws ServletException {
 		memberService = new MemberService();
 	}
-
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

@@ -91,9 +91,12 @@ public class MemberRegistController {
 		int insertCnt = memberService.insertMember(memberVo);
 		logger.debug("insertCnt : {}", insertCnt);
 		
-		
+		//try {
 		if(insertCnt == 1){
 			return "redirect:/memberList/process";
+		//}catch() {
+			
+		//}
 		
 		}else {
 			return "tiles.member.memberRegistContent";

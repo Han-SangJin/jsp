@@ -15,7 +15,8 @@ public class IocTest {
 		// 스프링 빈 사용설명서를 사용하여 스프링 컨테이너를 생성
 		// 스프링 컨테이너로 : applicationContext
 		ApplicationContext context  = 
-				new ClassPathXmlApplicationContext("classpath:kr/or/ddit/config/spring/ioc/ioc.xml");
+				new ClassPathXmlApplicationContext("classpath:kr/or/ddit/config/spring/ioc/ioc.xml",
+												   "classpath:kr/or/ddit/config/spring/datasource-context_dev.xml");
 		
 		// 스프링 컨테이너로 부터 스프링 빈을 받아서 사용
 		// 컨테이너에게 원하는 스프링 빈을 요청하여 받는 과정(DL: Dependency Lookup)

@@ -10,7 +10,7 @@ import kr.or.ddit.board.service.BoardServiceI;
 
 @Configuration
 public class JavaSpringConfig {
-	
+		
 	// boardRepository, boardService
 	// 메소드이름 ==> 스프링 빈이름
 	// <bean id="boardRepository" class="kr.or.ddit.board.repository.BoardRepository"/> 와 동일한 기능 (xml)

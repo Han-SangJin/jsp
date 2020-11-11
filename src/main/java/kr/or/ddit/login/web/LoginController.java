@@ -100,7 +100,7 @@ public class LoginController {
 	//		jsp/servlet 기반의 request 역할을 담당
 	@RequestMapping(path="/process", params= {"userid"})							//login/process 로 값이 들어온다	   // 값 jsp에서 가져옴
 	public String process(String userid, String pass, MemberVo memberVo, HttpSession session, Model model, 
-			@RequestBody String body,
+			// @RequestBody String body,
 			@RequestParam(name="email", 
 						  required = false, 
 						  defaultValue = "brown@line.kr") String user_id) {	// RequestParam 으로 변수 명이 다를때 파라미터를 특정 변수에 할당 할 수 있다
@@ -109,7 +109,7 @@ public class LoginController {
 		//logger로 id, pass 값 띄워줌
 		logger.debug("LoginCOntroller.process() {} / {} / {}", userid, pass, memberVo);	
 		logger.debug("user_id : {}", user_id);	
-		logger.debug("body : {}", body);	
+//		logger.debug("body : {}", body);	
 		
 		// bean Dao에서 멤버 조회
 //		MemberServiceI memberService = context.getBean("memberService", MemberServiceI.class); context 를 계속 만들어줘야 해서 의존성생김

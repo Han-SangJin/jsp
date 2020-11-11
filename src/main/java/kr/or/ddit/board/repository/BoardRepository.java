@@ -13,9 +13,9 @@ public class BoardRepository implements BoardRepositoryI{
 		// 가짜 객체(Mock)을 반환한다.
 		if(boardNo == 1) {
 			return new BoardVo(1, "첫번째 글",  "내용");
-		}
-		else
+		}else {
 			return null;
+		}
 	}
 
 }

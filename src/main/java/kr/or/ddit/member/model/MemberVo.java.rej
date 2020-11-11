@@ -1,0 +1,14 @@
+diff a/src/main/java/kr/or/ddit/member/model/MemberVo.java b/src/main/java/kr/or/ddit/member/model/MemberVo.java	(rejected hunks)
+@@ -2,8 +2,11 @@
+ 
+ import java.sql.Date;
+ 
++import javax.xml.bind.annotation.XmlRootElement;
++
++@XmlRootElement(name= "memberVo")
+ public class MemberVo {
+-	
++	 
+ 	private String userid;
+ 	private String pass;
+ 	private String usernm;
