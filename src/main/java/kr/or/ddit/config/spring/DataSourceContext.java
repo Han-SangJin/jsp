@@ -33,7 +33,6 @@ public class DataSourceContext {
 	</bean>
 	*/
 	// <bean> ==> @Bean Methd
-	
 	@Bean
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
@@ -62,16 +61,15 @@ public class DataSourceContext {
 		factoryBean.setDataSource(dataSource());
 									// dataSource() 다른 스프링 빈 호출방법 => 해당 메소드를 호출한다.
 		return factoryBean.getObject();
-		
 	}
 		
+	
+	
 	/*	
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactoryBean"/>
 	</bean>
 	*/
-		
-		
 	@Bean
 	public SqlSessionTemplate sqlSessionTemplate() throws Exception {
 		SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactoryBean());

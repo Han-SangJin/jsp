@@ -14,13 +14,14 @@ import org.springframework.stereotype.Repository;
 import kr.or.ddit.common.model.PageVo;
 import kr.or.ddit.db.MybatisUtil;
 import kr.or.ddit.member.model.MemberVo;
-
-@Repository("memberDao")	
+						// @Resource(name="memberDao")로 호출 가능
+@Repository("memberDao") //설정한 이름을 service 에서 호출가능, @repository를 스캔해서 root context 에서 빈객체로 지정
 public class MemberDao implements MemberDaoI {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	
-	@Resource(name="sqlSessionTemplate")
+											// mybatis 로 바로 호출하는 역할 data source 에 선언되어 있음 
+	@Resource(name="sqlSessionTemplate")	//==  SqlSession sqlSession = MybatisUtil.getSession();
 	private SqlSessionTemplate sqlSession;
 	
 	

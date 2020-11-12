@@ -22,7 +22,7 @@
 	
 	
 	
-					<!--		 @Aspect를 자바에 설정 		 -->
+					<!--		 @Aspect를                                                               자 바 에 설정 		 -->
 	<!-- @Aspect를 부여한 클래스에 대한 설정 처리 -->
 	<aop:aspectj-autoproxy/>								<!-- @Aspect  -->
 	

@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,13 +18,13 @@ import kr.or.ddit.db.MybatisUtil;
 import kr.or.ddit.member.dao.MemberDaoI;
 import kr.or.ddit.member.model.MemberVo;
 
-@Transactional
-@Service("memberService")
+@Transactional	// 트랜젝션 어노테이션이 붙을수 있는곳은 service 뿐임, service 에서
+@Service("memberService")		// @service Bean 객체 선언, web에서 @Resource(name="memberService") 로 사용가능
 public class MemberService implements MemberServiceI {
 	
 	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(MemberService.class);
 	
-	@Resource(name="memberDao")
+	@Resource(name="memberDao")	// Dao 에서 @Repository로 지정한 이름
 	private MemberDaoI memberDao;
 	
 
