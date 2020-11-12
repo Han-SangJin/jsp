@@ -18,7 +18,7 @@
 	<bean id="profileImgView" class="kr.or.ddit.mvc.view.ProfileImgView"/>		<!-- ProfileImgView 객체 등록 / profile_controller가 사용자 정보가져 와서 url을 요청하면 
 																						profileImgView를 불러온다 -->
 	<bean id="DownloadView" class="kr.or.ddit.mvc.view.DownloadView"/>	
-																						
+																							
 	<bean id="excelView" class="kr.or.ddit.mvc.view.ExcelDownloadView"/>		<!-- excel view 설정  -->						
 																						
 	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>	<!-- Resolver 등록 -->
@@ -27,7 +27,7 @@
 		<property name="order" value="1"/>
 	</bean>
 
-
+	
 	<!-- tiles view resolver 추가
 		1. tiles 설정 작업==> TilesConfigurer 를 통해 설정
 		2. tiles view resolver 등록 

@@ -32,4 +32,9 @@
 		<context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
 	</context:component-scan>
 	
+	
+	
+	
+	<!-- 				이폴더	 java로 		옮겨감 				 -->
+	
 </beans>

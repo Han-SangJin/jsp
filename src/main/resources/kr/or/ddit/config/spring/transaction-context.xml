@@ -46,4 +46,8 @@
 		<aop:advisor advice-ref="txAdvisor" pointcut="within(kr.or.ddit..service.*)"/> <!-- service에담긴 모든 클래스 포함 -->
 	</aop:config>
 			 
+			 
+			 
+			 
+			 	<!-- 				이폴더	 java로 		옮겨감 				 -->
 </beans>
