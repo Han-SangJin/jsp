@@ -20,12 +20,12 @@
 		 
 	-->
 	
-	<!-- 1.트랜잭션 메니저 등록   DB가 하나라면 트랜잭션 매니저 또한 하나만 등록돼야 한다
+	<!-- 1.트랜잭션 메니저 등록   DB가 하나라면 트랜잭션 매니저 또한 하나만 등록돼야 한다 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
-	      property ref 는  datasource-context 에서 불러옴  
+	    <!--   property ref 는  datasource-context 에서 불러옴  
 		 스프링 빈의 선언 순서는 중요하지 않다 - spring container가 알아서 처리 -->
 	
 	

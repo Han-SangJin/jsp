@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- reader, processor, writer -->
+	<bean id="yogurtReader" class="org.mybatis.spring.batch.MyBatisCursorItemReader">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/> <!-- datasource-context의 두번째 bean id 호출 -->
+		<property name="queryId" value="yogurt.selectCycle"/> 
+	</bean>
+	
+	
+	<bean id="yogurtProcessor" class="kr.or.ddit.batch.yogurt.YogurtPocessor" scope="step"/>
+	
+	
+	<bean id="yogurtWriter" class="kr.or.ddit.batch.yogurt.CustomMyBatisBatchItemWriter" scope="step">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="statementId" value="yogurt.insertDaily"></property>
+	</bean>
+	
+	 
+	 <!-- 어노테이션 스캔 -->
+	<context:annotation-config/>
+	
+	
+										<!-- datasource-context의 첫번째 bean id 호출 -->
+	<batch:job-repository id="jobRepository" data-source="dataSource" transaction-manager="transactionManager"/>   
+	
+	<bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository"/>
+	</bean>
+	
+	
+	<!-- 배치 실행방식 -->
+	<batch:job id="yogurtJob" restartable="true">
+		<batch:step id="yogurtStep" allow-start-if-complete="true">
+			<batch:tasklet>																					<!-- 2개씩 묶음 -->
+				<batch:chunk reader="yogurtReader" processor="yogurtProcessor" writer="yogurtWriter" commit-interval="2"/>
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+	
+	
+</beans>
